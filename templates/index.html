@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<ul>
+{% for datum in data %}
+ <li>   {{datum.date_of_operation}}
+        {{datum.arrest}}
+        {{datum.age_group_of_offender}}
+        {{datum.race_of_offender}}
+        {{datum.criminal_record}}
+        {{datum.repeat_offender}}
+        {{datum.in_possession_of_weapon}}
+        {{datum.marital_status}}
+        {{datum.highest_level_of_education}}
+        {{datum.offenders_sector_of_employment}}
+        {{datum.vehicle_towed_impounded}}
+        {{datum.fines}}
+        {{datum.number_of_charges}}
+        {{datum.dna_taken}}
+        {{datum.method_of_payment_for_ads}}
+        {{datum.website_used_for_posting}}
+         </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
