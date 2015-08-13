@@ -61,7 +61,6 @@ def html_view():
 
 @app.route("/send_data",methods=["GET","POST"])
 def send_data():
-    
     store = Store(
         date_of_operation=request.form.get("date_of_operation"),
         arrest=request.form.get("arrest"),
@@ -82,7 +81,7 @@ def send_data():
         )
     db.session.add(store)
     db.session.commit()
-    return redirect(url_for("index.html"))
+    return redirect(url_for("html_view"))
 
 @app.route("/json_view",methods=["GET","POST"])
 def json_view():
