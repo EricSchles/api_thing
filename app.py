@@ -72,7 +72,7 @@ def receive_json(data):
                   repeat_offender=data["repeat_offender"],
                   in_possession_of_weapon=data["in_possession_of_weapon"],
                   marital_status=data["marital_status"],
-                  highest_level_of_education=data=["highest_level_of_education"],
+                  highest_level_of_education=data["highest_level_of_education"],
                   offenders_sector_of_employment=data["offenders_sector_of_employment"],
                   vehicle_towed_impounded=data["vehicle_towed_impounded"],
                   fines=data["fines"],
