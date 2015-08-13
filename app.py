@@ -84,4 +84,6 @@ def json_view():
         json_list.append(elem)
     return json.dumps(json_list)
 
-app.run(debug=True)    
+
+if __name__ '__main__':
+    app.run(debug=True)    
