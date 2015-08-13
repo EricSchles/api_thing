@@ -61,41 +61,42 @@ def html_view():
 
 @app.route("/send_data",methods=["GET","POST"])
 def send_data():
-    # store = Store(
-    #     date_of_operation=request.form.get("date_of_operation"),
-    #     arrest=request.form.get("arrest"),
-    #     age_group_of_offender=request.form.get("age_group_of_offender"),
-    #     race_of_offender=request.form.get("race_of_offender"),
-    #     criminal_record=request.form.get("criminal_record"),
-    #     repeat_offender=request.form.get("repeat_offender"),
-    #     in_posession_of_weapon=request.form.get("in_posession_of_weapon"),
-    #     marital_status=request.form.get("marital_status"),
-    #     highest_level_of_education=request.form.get("highest_level_of_education"),
-    #     offenders_sector_of_employment=request.form.get("offenders_sector_of_employment"),
-    #     vehicle_towed_impounded=request.form.get("vehicle_towed_impounded"),
-    #     fines=request.form.get("fines"),
-    #     number_of_charges=request.form.get("number_of_charges"),
-    #     dna_taken=request.form.get("dna_taken"),
-    #     method_of_payment_for_ads=request.form.get("method_of_payment_for_ads"),
-    #     website_used_for_posting=request.form.get("website_used_for_posting")
-    #     )
+    
+    date_of_operation=request.form.get("date_of_operation")
+    arrest=request.form.get("arrest")
+    age_group_of_offender=request.form.get("age_group_of_offender")
+    race_of_offender=request.form.get("race_of_offender")
+    criminal_record=request.form.get("criminal_record")
+    repeat_offender=request.form.get("repeat_offender")
+    in_posession_of_weapon=request.form.get("in_posession_of_weapon")
+    marital_status=request.form.get("marital_status")
+    highest_level_of_education=request.form.get("highest_level_of_education")
+    offenders_sector_of_employment=request.form.get("offenders_sector_of_employment")
+    vehicle_towed_impounded=request.form.get("vehicle_towed_impounded")
+    fines=request.form.get("fines")
+    number_of_charges=request.form.get("number_of_charges")
+    dna_taken=request.form.get("dna_taken")
+    method_of_payment_for_ads=request.form.get("method_of_payment_for_ads")
+    website_used_for_posting = request.form.get("website_used_for_posting")
+    
     store = Store(
-        date_of_operation="date_of_operation",
-        arrest="arrest",
-        age_group_of_offender="age_group_of_offender",
-        race_of_offender="race_of_offender",
-        criminal_record="criminal_record",
-        repeat_offender="repeat_offender",
-        in_posession_of_weapon="in_posession_of_weapon",
-        marital_status="marital_status",
-        highest_level_of_education="highest_level_of_education",
-        offenders_sector_of_employment="offenders_sector_of_employment",
-        vehicle_towed_impounded="vehicle_towed_impounded",
-        fines="fines",
-        number_of_charges="number_of_charges",
-        dna_taken="dna_taken",
-        method_of_payment_for_ads="method_of_payment_for_ads",
-        website_used_for_posting="website_used_for_posting")
+        date_of_operation=date_of_operation,
+        arrest=arrest,
+        age_group_of_offender=age_group_of_offender,
+        race_of_offender=race_of_offender,
+        criminal_record=criminal_record,
+        repeat_offender=repeat_offender,
+        in_posession_of_weapon=in_posession_of_weapon,
+        marital_status=marital_status,
+        highest_level_of_education=highest_level_of_education,
+        offenders_sector_of_employment=offenders_sector_of_employment,
+        vehicle_towed_impounded=vehicle_towed_impounded,
+        fines=fines,
+        number_of_charges=number_of_charges,
+        dna_taken=dna_taken,
+        method_of_payment_for_ads=method_of_payment_for_ads,
+        website_used_for_posting=website_used_for_posting)
+
     db.session.add(store)
     db.session.commit()
     return redirect(url_for("html_view"))
