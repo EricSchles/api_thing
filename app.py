@@ -1,4 +1,3 @@
-from app import app
 from flask import render_template,request,jsonify,redirect,url_for
 from flask.ext.sqlalchemy import SQLAlchemy
 import os
