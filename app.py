@@ -59,7 +59,7 @@ class Store(db.Model):
 def html_view():
     return render_template("index.html",data=Store.query.all())
 
-@app.route("/receive_json/<data>",methods=["POST"])
+@app.route("/receive_json/<data>",methods=["GET","POST"])
 def receive_json(data):
     
     
