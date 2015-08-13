@@ -62,29 +62,27 @@ def html_view():
 @app.route("/send_data",methods=["GET","POST"])
 def send_data():
     
-    if request.method=="POST":
-        #data = json.loads(data)
-        store = Store(
-            date_of_operation=request.form.get("date_of_operation"),
-            arrest=request.form.get("arrest"),
-            age_group_of_offender=request.form.get("age_group_of_offender"),
-            race_of_offender=request.form.get("race_of_offender"),
-            criminal_record=request.form.get("criminal_record"),
-            repeat_offender=request.form.get("repeat_offender"),
-            in_possession_of_weapon=request.form.get("in_possession_of_weapon"),
-            marital_status=request.form.get("marital_status"),
-            highest_level_of_education=request.form.get("highest_level_of_education"),
-            offenders_sector_of_employment=request.form.get("offenders_sector_of_employment"),
-            vehicle_towed_impounded=request.form.get("vehicle_towed_impounded"),
-            fines=request.form.get("fines"),
-            number_of_charges=request.form.get("number_of_charges"),
-            dna_taken=request.form.get("dna_taken"),
-            method_of_payment_for_ads=request.form.get("method_of_payment_for_ads"),
-            website_used_for_posting=request.form.get("website_used_for_posting")
+    
+    store = Store(
+        date_of_operation=request.form.get("date_of_operation"),
+        arrest=request.form.get("arrest"),
+        age_group_of_offender=request.form.get("age_group_of_offender"),
+        race_of_offender=request.form.get("race_of_offender"),
+        criminal_record=request.form.get("criminal_record"),
+        repeat_offender=request.form.get("repeat_offender"),
+        in_possession_of_weapon=request.form.get("in_possession_of_weapon"),
+        marital_status=request.form.get("marital_status"),
+        highest_level_of_education=request.form.get("highest_level_of_education"),
+        offenders_sector_of_employment=request.form.get("offenders_sector_of_employment"),
+        vehicle_towed_impounded=request.form.get("vehicle_towed_impounded"),
+        fines=request.form.get("fines"),
+        number_of_charges=request.form.get("number_of_charges"),
+        dna_taken=request.form.get("dna_taken"),
+        method_of_payment_for_ads=request.form.get("method_of_payment_for_ads"),
+        website_used_for_posting=request.form.get("website_used_for_posting")
         )
-        db.session.add(store)
-        db.session.commit()
-        return "success"
+    db.session.add(store)
+    db.session.commit()
     return redirect(url_for("index.html"))
 
 @app.route("/json_view",methods=["GET","POST"])
