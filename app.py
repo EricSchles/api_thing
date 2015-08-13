@@ -59,6 +59,31 @@ class Store(db.Model):
 def html_view():
     return render_template("index.html",data=Store.query.all())
 
+@app.route("/receive_json/<data>",methods=["POST"])
+def receive_json(data):
+    
+    
+    data = json.loads(data)
+    store = Store(date_of_operation=data["date_of_operation"],
+                  arrest=data["arrest"],
+                  age_group_of_offender=data["age_group_of_offender"],
+                  race_of_offender=data["race_of_offender"],
+                  criminal_record=data["criminal_record"],
+                  repeat_offender=data["repeat_offender"],
+                  in_possession_of_weapon=data["in_possession_of_weapon"],
+                  marital_status=data["marital_status"],
+                  highest_level_of_education=data=["highest_level_of_education"],
+                  offenders_sector_of_employment=data["offenders_sector_of_employment"],
+                  vehicle_towed_impounded=data["vehicle_towed_impounded"],
+                  fines=data["fines"],
+                  number_of_charges=data["number_of_charges"],
+                  dna_taken=data["dna_taken"],
+                  method_of_payment_for_ads=data["method_of_payment_for_ads"],
+                  website_used_for_posting=data["website_used_for_posting"])
+    db.session.add(store)
+    db.session.commit()
+    return "success"
+
 @app.route("/json_view",methods=["GET","POST"])
 def json_view():
     data = Store.query.all()
