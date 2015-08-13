@@ -63,7 +63,7 @@ def html_view():
 def send_data():
     
     if request.method=="POST":
-        data = json.loads(data)
+        #data = json.loads(data)
         store = Store(
             date_of_operation=request.form.get("date_of_operation"),
             arrest=request.form.get("arrest"),
