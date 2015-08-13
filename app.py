@@ -33,7 +33,7 @@ class Store(db.Model):
     website_used_for_posting = db.Column(db.String(400))
 
     def __init__(self,date_of_operation="",arrest="",age_group_of_offender="",race_of_offender="",
-                 criminal_record="",repeat_offender="",in_possession_of_weapon="",marital_status="",
+                 criminal_record="",repeat_offender="",in_posession_of_weapon="",marital_status="",
                  highest_level_of_education="",offenders_sector_of_employment="",vehicle_towed_impounded="",
                  fines="",number_of_charges="",dna_taken="",method_of_payment_for_ads="",website_used_for_posting=""):
         self.date_of_operation= date_of_operation
@@ -42,7 +42,7 @@ class Store(db.Model):
         self.race_of_offender=race_of_offender
         self.criminal_record=criminal_record
         self.repeat_offender=repeat_offender
-        self.in_possession_of_weapon=in_possession_of_weapon
+        self.in_posession_of_weapon=in_posession_of_weapon
         self.marital_status=marital_status
         self.highest_level_of_education=highest_level_of_education
         self.offenders_sector_of_employment=offenders_sector_of_employment
@@ -62,7 +62,6 @@ def html_view():
 @app.route("/send_data",methods=["GET","POST"])
 def send_data():
     
-    
     store = Store(
         date_of_operation=request.form.get("date_of_operation"),
         arrest=request.form.get("arrest"),
@@ -70,7 +69,7 @@ def send_data():
         race_of_offender=request.form.get("race_of_offender"),
         criminal_record=request.form.get("criminal_record"),
         repeat_offender=request.form.get("repeat_offender"),
-        in_possession_of_weapon=request.form.get("in_possession_of_weapon"),
+        in_posession_of_weapon=request.form.get("in_posession_of_weapon"),
         marital_status=request.form.get("marital_status"),
         highest_level_of_education=request.form.get("highest_level_of_education"),
         offenders_sector_of_employment=request.form.get("offenders_sector_of_employment"),
@@ -97,7 +96,7 @@ def json_view():
         elem["race_of_offender"]=datum.race_of_offender
         elem["criminal_record"]=datum.criminal_record
         elem["repeat_offender"]=datum.repeat_offender
-        elem["in_possession_of_weapon"]=datum.in_possession_of_weapon
+        elem["in_posession_of_weapon"]=datum.in_posession_of_weapon
         elem["marital_status"]=datum.marital_status
         elem["highest_level_of_education"]=datum.highest_level_of_education
         elem["offenders_sector_of_employment"]=datum.offenders_sector_of_employment
